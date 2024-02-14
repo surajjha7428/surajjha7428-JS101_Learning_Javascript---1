@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function Automobile(make, model, year, fuelType) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+        this.fuelType = fuelType;
+    }
+
+    Automobile.prototype.startEngine = function () {
+        console.log("Engine started.");
+    };
+
+    Automobile.prototype.stopEngine = function () {
+        console.log("Engine stopped.");
+    };
+
+    Automobile.prototype.drive = function () {
+        console.log("Driving.");
+    };
+
+    function Car(make, model, year, fuelType, numDoors) {
+        Automobile.call(this, make, model, year, fuelType);
+        this.numDoors = numDoors;
+    }
+
+    Car.prototype = Object.create(Automobile.prototype);
+    Car.prototype.constructor = Car;
+
+    Car.prototype.honk = function () {
+        console.log("Honk honk!");
+    };
+
+    function Truck(make, model, year, fuelType, payloadCapacity) {
+        Automobile.call(this, make, model, year, fuelType);
+        this.payloadCapacity = payloadCapacity;
+    }
+
+    Truck.prototype = Object.create(Automobile.prototype);
+    Truck.prototype.constructor = Truck;
+
+    Truck.prototype.loadCargo = function () {
+        console.log("Cargo loaded.");
+    };
+
+    const mycCar = new Car("Toyota", "Camry", 2022, "Gasoline", 4);
+    myCar.startEngine();
+    myCar.drive();
+    myCar.honk();
+    myCar.stopEngine();
+
+    const myTruck = new Truck("Ford", "F-150", 2022, "Diesel", 2000);
+    myTruck.startEngine();
+    myTtruck.drive();
+    myTruck.loadCargo();
+    myTruck.stopEngine();
+</script>
+
+</html>
