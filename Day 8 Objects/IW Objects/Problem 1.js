@@ -1,6 +1,6 @@
 
 // Author : Suraj jha
-// Linkdin : https://www.linkedin.com/in/aman-mittal-22833b288/ 
+
 
 // Problem 1
 // https://false-trouser-16e.notion.site/Problem-1-d0d782da0f8d4fafb9043dfb9748069b
